@@ -1,5 +1,5 @@
 {% set name = "ibis-heavyai" %}
-{% set version = "1.0" %}
+{% set version = "1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ibis-heavyai-{{ version }}.tar.gz
-  sha256: ccebecc331eeb8c4f50df7984e7445bfebd25285bd674d2ec2a6326002b7ece0
+  sha256: d4dbf1e5f151408d00073812fb62c40285cc3a481d146b44cc63d4c2d4cf81fd
 
 build:
   noarch: python
