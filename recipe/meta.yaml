@@ -30,6 +30,7 @@ requirements:
     - shapely
     - geopandas
     - importlib_metadata
+    - packaging
 
 test:
   imports:
