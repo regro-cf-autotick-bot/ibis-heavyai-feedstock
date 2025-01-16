@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ibis-heavyai-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ibis-heavyai-{{ version }}.tar.gz
   sha256: d4dbf1e5f151408d00073812fb62c40285cc3a481d146b44cc63d4c2d4cf81fd
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - flit-core
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - ibis-framework >=2.0, <3
     - heavyai
     - rbc >=0.8.0
@@ -33,6 +33,8 @@ requirements:
     - packaging
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - ibis_heavyai
 
